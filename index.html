@@ -20,7 +20,7 @@
       document.body.appendChild(app.view); //<body>に追加する
       
       //渋谷
-      const sibuya = PIXI.Sprite.from('image/sibuya.png');
+      const sibuya = PIXI.Sprite.from('/image/sibuya.png');
       sibuya.width = 300;//幅
       sibuya.height = 300;//高さ
       sibuya.x = 96;//x座標
@@ -58,7 +58,7 @@
 
       //モウセンゴケの水平位置
       x_positions.forEach(function(xpos){
-        let mousengoke = PIXI.Sprite.from('image/mousengoke.png');
+        let mousengoke = PIXI.Sprite.from('/image/mousengoke.png');
         mousengoke.anchor.set(0.5);
         mousengoke.scale.set(0.5);
         mousengoke.x = xpos;
