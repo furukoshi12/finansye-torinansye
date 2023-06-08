@@ -12,7 +12,7 @@
         height: 640, //画面高680px
       });
       //背景を設定
-      const background = PIXI.Sprite.from('/image/background.png');
+      const background = PIXI.Sprite.from('https://github.com/furukoshi12/finansye-torinansye/blob/master/image/background.png?raw=true');
       background.width = app.view.width;
       background.height = app.view.height;
       app.stage.addChildAt(background, 0); // 背景を最背面に配置する
@@ -20,7 +20,7 @@
       document.body.appendChild(app.view); //<body>に追加する
       
       //渋谷
-      const sibuya = PIXI.Sprite.from('/image/sibuya.png');
+      const sibuya = PIXI.Sprite.from('https://github.com/furukoshi12/finansye-torinansye/blob/master/image/sibuya.png?raw=true');
       sibuya.width = 300;//幅
       sibuya.height = 300;//高さ
       sibuya.x = 96;//x座標
@@ -58,7 +58,7 @@
 
       //モウセンゴケの水平位置
       x_positions.forEach(function(xpos){
-        let mousengoke = PIXI.Sprite.from('/image/mousengoke.png');
+        let mousengoke = PIXI.Sprite.from('https://github.com/furukoshi12/finansye-torinansye/blob/master/image/mousengoke.png?raw=true');
         mousengoke.anchor.set(0.5);
         mousengoke.scale.set(0.5);
         mousengoke.x = xpos;
@@ -70,7 +70,7 @@
 
       //フィナンシェの水平位置
       x_positions.forEach(function(xpos){
-        let finansye = PIXI.Sprite.from('/image/finansye.png');
+        let finansye = PIXI.Sprite.from('https://github.com/furukoshi12/finansye-torinansye/blob/master/image/finansye.png?raw=true');
         finansye.anchor.set(0.5);
         finansye.scale.set(0.5);
         finansye.x = xpos;
@@ -91,7 +91,7 @@
       let fallSpeed = 2;
       app.ticker.add(function(){
         app.stage.children.forEach(element => {
-          if(element.texture.textureCacheIds[0] === '/image/finansye.png' || element.texture.textureCacheIds[0] === '/image/mousengoke.png'){
+          if(element.texture.textureCacheIds[0] === 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/finansye.png?raw=true' || element.texture.textureCacheIds[0] === 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/mousengoke.png?raw=true'){
             element.y += fallSpeed;
             if(element.y > app.view.scrollHeight){
               random = Math.floor( Math.random() * y_positions.length );
@@ -101,13 +101,13 @@
             if(Math.abs(element.x - sibuya.x) <= distanceThreshold && Math.abs(element.y - (sibuya.y - 100)) <= distanceThreshold){
               random = Math.floor( Math.random() * y_positions.length );
               element.y = y_positions[random];
-              if(!gameEnded && element.texture.textureCacheIds[0] === '/image/finansye.png'){
+              if(!gameEnded && element.texture.textureCacheIds[0] === 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/finansye.png?raw=true'){
                 scoreCount += 100;
                 score.text = "Score : " + scoreCount;
                 if (scoreCount % 200 === 0 || scoreCount % 200 === 50) {
                   fallSpeed += 0.5; // 得点が200点増えるごとに落下スピードを上げる
                 }
-              } else if (!gameEnded && element.texture.textureCacheIds[0] === '/image/mousengoke.png'){
+              } else if (!gameEnded && element.texture.textureCacheIds[0] === 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/mousengoke.png?raw=true'){
                 scoreCount -= 50;
                 score.text = "Score : " + scoreCount;
               }
@@ -132,10 +132,10 @@
 
         let resultImage, message;
         if (scoreCount >= 1000) {
-          resultImage = '/image/goodscore.png';
+          resultImage = 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/goodscore.png?raw=true';
           message = 'さすがだね!\nフィナンシェ食べなんしぇ〜';
         } else {
-          resultImage = '/image/badscore.png';
+          resultImage = 'https://github.com/furukoshi12/finansye-torinansye/blob/master/image/badscore.png?raw=true';
           message = 'も〜だめだめじゃん！\nもうせん、モウセンゴケだよ';
         }
 
